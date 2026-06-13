@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="icon" href="Images/everlong.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <video id="background-video" src="Video/SEMATARY - WENDIGO [OFFICIAL VIDEO].mp4" muted loop preload="metadata"></video>
+    <!-- Main player container centered on the page -->
+    <main class="player-shell">
+        <section class="player-card" aria-label="Music player">
+            <p class="player-label">Now Playing</p>
+
+            <!-- Album artwork -->
+            <div class="cover-wrap">
+                <img src="Images/Sematary-Wendigo.jpg" alt="Sematary - Wendigo cover art">
+            </div>
+
+            <h1 class="track-title">WENDIGO</h1>
+            <p class="track-artist">SEMATARY</p>
+
+            <!-- Seek bar and current/total time -->
+            <div class="progress-group" aria-label="Track progress">
+                <div class="progress-bar" role="slider" aria-label="Seek bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="time-row">
+                    <span class="current-time">00:00</span>
+                    <span class="total-time">00:00</span>
+                </div>
+            </div>
+
+            <!-- Custom playback controls -->
+            <div class="controls" aria-label="Playback controls">
+                <button class="icon-btn" type="button" aria-label="Previous track">&#9198;</button>
+                <button class="play-btn" type="button" aria-label="Play">&#9658;</button>
+                <button class="icon-btn" type="button" aria-label="Next track">&#9197;</button>
+            </div>
+
+            <!-- Volume slider UI -->
+            <div class="volume-group" aria-label="Volume control">
+                <span class="volume-icon" aria-hidden="true">&#128266;</span>
+                <input class="volume-slider" type="range" min="0" max="100" value="60" aria-label="Volume">
+                <span class="volume-value">100%</span>
+            </div>
+
+            <!-- Hidden native audio element used by the custom controls -->
+            <audio class="player-audio" preload="metadata">
+                <source src="Music/Sematary-Wendigo.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
